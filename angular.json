@@ -3,11 +3,21 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "fp-adv": {
+    "fp-adv-proj": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": false
         }
       },
       "root": "",
@@ -17,7 +27,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/fp-adv",
+            "outputPath": "dist/fp-adv-proj",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +76,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "fp-adv:build"
+            "browserTarget": "fp-adv-proj:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "fp-adv:build:production"
+              "browserTarget": "fp-adv-proj:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "fp-adv:build"
+            "browserTarget": "fp-adv-proj:build"
           }
         },
         "test": {
@@ -114,15 +124,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "fp-adv:serve"
+            "devServerTarget": "fp-adv-proj:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "fp-adv:serve:production"
+              "devServerTarget": "fp-adv-proj:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "fp-adv"
+  "defaultProject": "fp-adv-proj"
 }
