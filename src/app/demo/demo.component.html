@@ -6,9 +6,13 @@
     </div>
     <p class="mb-1">{{ item.data }}</p>
   </div>
+
 </div>
 <ng-template #loader>
   <div>Loading...</div>
 </ng-template>
-
+<div class="test" #testEl>test</div>
+<button (click)="changeReusableComponentsState()">Toggle</button>
+<fp-reusable></fp-reusable>
+<fp-reusable></fp-reusable>
 <fp-reusable></fp-reusable>

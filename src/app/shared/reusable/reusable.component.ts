@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReusableComponent implements OnInit {
 
+  test = false;
   constructor() { }
 
   ngOnInit(): void {
