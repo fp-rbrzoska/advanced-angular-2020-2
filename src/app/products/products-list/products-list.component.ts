@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
 import { ProductsService } from '../products.service';
 import { Product } from '../../models/product';
 import { Observable } from 'rxjs';
@@ -9,7 +9,7 @@ import { ProductsItemComponent } from '../products-item/products-item.component'
   templateUrl: './products-list.component.html',
   styleUrls: ['./products-list.component.scss']
 })
-export class ProductsListComponent implements OnInit {
+export class ProductsListComponent implements OnInit, AfterViewInit {
 
   products$: Observable<Product[]>;
 
@@ -20,6 +20,12 @@ export class ProductsListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.productItems.forEach(p => p.showDetails = true);
+    })
   }
 
   toggleDetails() {

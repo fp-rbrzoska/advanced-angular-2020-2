@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../core/auth.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'fp-navigation',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  isLoggedIn$: Observable<boolean>
+  constructor( private authService: AuthService) {
+    this.isLoggedIn$ = authService.isLoggedIn$;
+   }
 
   ngOnInit(): void {
   }
 
+  logIn() {
+    this.authService.logIn();
+  }
+
+  logOut() {
+    this.authService.logOut();
+  }
 }

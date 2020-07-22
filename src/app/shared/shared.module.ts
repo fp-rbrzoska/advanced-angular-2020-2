@@ -4,9 +4,10 @@ import { ReusableComponent } from './reusable/reusable.component';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { TestDirective } from './test.directive';
 import { HighlightDirective } from './highlight.directive';
+import { OnlyForLoggedInDirective } from './only-for-logged-in.directive';
 
 @NgModule({
-  declarations: [ReusableComponent, TestDirective, HighlightDirective],
+  declarations: [ReusableComponent, TestDirective, HighlightDirective, OnlyForLoggedInDirective],
   imports: [
     CommonModule,
     ButtonsModule,
@@ -15,7 +16,7 @@ import { HighlightDirective } from './highlight.directive';
     ButtonsModule,
     ReusableComponent,
     TestDirective,
-    HighlightDirective
+    HighlightDirective, OnlyForLoggedInDirective
   ]
 })
 export class SharedModule { }

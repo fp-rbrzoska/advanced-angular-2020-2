@@ -1,13 +1,16 @@
-<div  fpTest="click message" class="list-group" *ngIf="demoData$ | async as demoData; else loader">
-  <div  *ngFor="let item of demoData" class="list-group-item list-group-item-action flex-column align-items-start mb-1">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">{{ item.name }}</h5>
-      <small>Id: {{ item.id }}</small>
+<ng-container *fpOnlyForLoggedIn>
+  <div  fpTest="click message" class="list-group" *ngIf="demoData$ | async as demoData; else loader">
+    <div  *ngFor="let item of demoData" class="list-group-item list-group-item-action flex-column align-items-start mb-1">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{ item.name }}</h5>
+        <small>Id: {{ item.id }}</small>
+      </div>
+      <p class="mb-1">{{ item.data }}</p>
     </div>
-    <p class="mb-1">{{ item.data }}</p>
-  </div>
-
 </div>
+</ng-container>
+
+
 <ng-template #loader>
   <div>Loading...</div>
 </ng-template>
