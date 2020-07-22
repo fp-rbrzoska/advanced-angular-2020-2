@@ -1,3 +1,4 @@
+<button class="btn btn-warning" (click)="toggleDetails()">Toggle details</button>
 <div class="list-group" *ngIf="products$ | async as products; else loader">
   <fp-products-item fpHighlight="highlight" *ngFor="let item of products" [product]="item"></fp-products-item>
 </div>
