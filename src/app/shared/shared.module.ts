@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { ReusableComponent } from './reusable/reusable.component';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { TestDirective } from './test.directive';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
-  declarations: [ReusableComponent, TestDirective],
+  declarations: [ReusableComponent, TestDirective, HighlightDirective],
   imports: [
     CommonModule,
     ButtonsModule,
@@ -13,7 +14,8 @@ import { TestDirective } from './test.directive';
   exports: [
     ButtonsModule,
     ReusableComponent,
-    TestDirective
+    TestDirective,
+    HighlightDirective
   ]
 })
 export class SharedModule { }
